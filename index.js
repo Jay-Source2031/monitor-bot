@@ -42,6 +42,7 @@ const products = {
   'savannah': { name: 'Savannah', price: 30, videoUrl: 'https://streamable.com/COLE_O_LINK_AQUI' },
   'abbi': { name: 'Abbi', price: 22, videoUrl: 'https://files.fm/f/vg9sk8v6nc' },
   'ivanka_and_bro': { name: 'Ivanka and Bro', price: 32, videoUrl: 'https://files.fm/f/vg9sk8v6nc' },
+  'anxious_panda': { name: 'Anxious Panda', price: 25, videoUrl: 'https://files.fm/f/nt9f356txu' },
   // adicione mais aqui...
 };
 
@@ -62,7 +63,7 @@ function buildProductKeyboard() {
     }
     rows.push(row);
   }
-  rows.push([{ text: '🛒 Ver Carrinho', callback_data: 'carrinho' }]);
+  rows.push([{ text: '🛒 view cart', callback_data: 'cart' }]);
   return rows;
 }
 
@@ -76,7 +77,7 @@ function resetState(chatId) {
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   resetState(chatId);
-  bot.sendMessage(chatId, '👋 Bem-vindo! Escolha um produto abaixo:', {
+  bot.sendMessage(chatId, '👋 Bem-vindo a BILLY STORE! Escolha um produto abaixo:', {
     reply_markup: { inline_keyboard: buildProductKeyboard() }
   });
 });
@@ -174,4 +175,5 @@ bot.on('message', (msg) => {
 });
 
 // express listen
+
 app.listen(PORT, () => console.log(`🌍 App escutando na porta ${PORT}`));
