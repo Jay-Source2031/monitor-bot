@@ -63,14 +63,6 @@ function buildProductKeyboard() {
     }
     rows.push(row);
   }
-  rows.push([{ text: '🛒 view cart', callback_data: 'cart' }]);
-  return rows;
-}
-
-function resetState(chatId) {
-  states[chatId] = { step: 'awaiting_product', cart: [] };
-}
-
 // ----------------- Handlers -----------------
 
 // start
@@ -177,3 +169,4 @@ bot.on('message', (msg) => {
 // express listen
 
 app.listen(PORT, () => console.log(`🌍 App escutando na porta ${PORT}`));
+
