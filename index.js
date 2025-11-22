@@ -139,9 +139,9 @@ bot.on('callback_query', async (query) => {
     let reply = `🧾 *Order Summary*\n\n${prodList}\n\nTotal: *${formatPrice(totalPrice)}*\nPayment: *${method.toUpperCase()}*\n\n`;
 
     if (method === 'paypal') {
-      reply += '💳 PayPal\nSend as family and friends to: `-----@gmail.com`\nPay then send proof to Support';
+      reply += '💳 PayPal\nSend as family and friends to: `zenitanatal@gmail.com`\nPay then send proof to Support';
     } else if (method === 'binance') {
-      reply += '🪙 Binance\nBTC: `------`\nUSDT: `-----`\nPay then send proof to Support';
+      reply += '🪙 Binance\nBTC: `13rRzDpRi7tMA6JmhRdwTAMh5bZpsFa2jX`\nUSDT: `0x155977f480e363c195c69d9a6793fe28c35b718a`\nPay then send proof to Support';
     } else if (method === 'cashapp') {
       // Aqui pegamos o link do CashApp para o produto escolhido
       const selectedProduct = products[st.selected]; // Aqui pegamos o produto selecionado diretamente
@@ -183,6 +183,7 @@ if (USE_WEBHOOK) {
     console.log(`Bot running on port ${PORT}`);
   });
 }
+
 
 
 
