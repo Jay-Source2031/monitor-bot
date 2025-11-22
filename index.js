@@ -90,7 +90,7 @@ function resetState(chatId) {
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   resetState(chatId);
-  bot.sendMessage(chatId, '👋 Welcome! Choose a product below:', {
+  bot.sendMessage(chatId, '👋 Welcome to SEXY SHOP! Choose a product below:', {
     reply_markup: { inline_keyboard: buildProductKeyboard() }
   });
 });
@@ -203,6 +203,7 @@ if (USE_WEBHOOK) {
     console.log(`Bot running on port ${PORT}`);
   });
 }
+
 
 
 
