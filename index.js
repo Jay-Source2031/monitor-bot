@@ -149,12 +149,12 @@ if (st.step === 'awaiting_method' && data.startsWith('method_')) {
 
   // --- PAYPAL ---
   if (method === 'paypal') {
-    reply += `💳 *PayPal Payment*\nSend the amount to:zenitanatal@gmail.com\n\`${paymentInfo.paypal}\`\n\nAfter payment, send the receipt to support.`;
+    reply += `💳 *PayPal Payment*\nSend the amount to:\n\`${paymentInfo.paypal}\`\n\nAfter payment, send the receipt to support.`;
   }
 
   // --- CRYPTO (BTC / USDT) ---
   else if (method === 'binance') {
-    reply += `🪙 *Crypto Payment*\n\n*BTC Address:13rRzDpRi7tMA6JmhRdwTAMh5bZpsFa2jX\n\`${paymentInfo.btc}\`\n\n*USDT (ERC20):0x155977f480e363c195c69d9a6793fe28c35b718a \n\`${paymentInfo.usdt}\`\n\nAfter payment, send the receipt to support.`;
+    reply += `🪙 *Crypto Payment*\n\n*BTC Address:\n\`${paymentInfo.btc}\`\n\n*USDT (ERC20):\n\`${paymentInfo.usdt}\`\n\nAfter payment, send the receipt to support.`;
   }
 
   // --- CASHAPP / APPLE PAY ---
@@ -204,6 +204,7 @@ if (USE_WEBHOOK) {
     console.log(`Bot running on port ${PORT}`);
   });
 }
+
 
 
 
