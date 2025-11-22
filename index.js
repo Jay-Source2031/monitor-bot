@@ -37,23 +37,23 @@ const paymentInfo = {
 
 // --------- Products ----------
 const products = {
-  'lizzy_and_bro': { name: 'Lizzy And Bro', price: 35, videoUrl: 'https://files.fm/f/kk9bqdp546', cashAppLink: 'https://buy.stripe.com/6oUdR94Egc3I1o12lE3F60m' },
-  'savannah': { name: 'Savannah', price: 40, videoUrl: 'https://files.fm/f/qhztu3g6jn', cashAppLink: 'https://buy.stripe.com/4gMfZhgmY1p4giV3pI3F60n' },
-  'iavnka_and_bro': { name: 'Ivanka and Bro', price: 35, videoUrl: 'https://files.fm/f/pq5uuca43k', cashAppLink: 'https://buy.stripe.com/eVq4gz0o00l00jXe4m3F60o' },
+  'lizzy_and_bro': { name: 'Lizzy And Bro', price: 35, videoUrl: 'https://files.fm/f/kk9bqdp546', cashAppLink: 'https://buy.stripe.com/dRm6oH7qN3mQ0sFakB6AM03' },
+  'savannah': { name: 'Savannah', price: 40, videoUrl: 'https://files.fm/f/qhztu3g6jn', cashAppLink: 'https://buy.stripe.com/5kQdR95iF5uYa3f1O56AM04' },
+  'iavnka_and_bro': { name: 'Ivanka and Bro', price: 35, videoUrl: 'https://files.fm/f/pq5uuca43k', cashAppLink: 'https://buy.stripe.com/dRm6oH7qN3mQ0sFakB6AM03' },
   'anita': { name: 'Anita', price: 35, videoUrl: 'https://files.fm/f/xdyqgs24z9', cashAppLink: 'https://buy.stripe.com/dRm6oHb2Ed7M0jXaSa3F60p' },
-  'amelia_blonde': { name: 'Amelia Blonde', price: 25, videoUrl: 'https://files.fm/f/jaz5fsg7hg', cashAppLink: 'https://buy.stripe.com/bJe8wPb2E0l09Ux8K23F60q' },
-  'darkzadie': { name: 'Darkzadie', price: 30, videoUrl: 'https://files.fm/f/4ewxxswfpp', cashAppLink: 'https://buy.stripe.com/eVq9ATfiU2t82s57FY3F60r' },
-  'desire_garcia': { name: 'Desire Garcia', price: 25, videoUrl: 'https://files.fm/f/dey5b3753c', cashAppLink: 'https://buy.stripe.com/28EeVd4Eg6Joc2Fgcu3F60s' },
-  'baby_ashlee': { name: 'Baby Ashlee', price: 30, videoUrl: 'https://files.fm/f/e9fz5g4qrt', cashAppLink: 'https://buy.stripe.com/28E3cvb2Ed7M8Qt2lE3F60t' },
-  'anxious_panda': { name: 'Anxious Panda', price: 25, videoUrl: 'https://files.fm/f/jwyqepghre', cashAppLink: 'https://buy.stripe.com/aFacN50o03xceaNd0i3F60u' },
-  'emmi_sellers': { name: 'Emmi Sellers', price: 35, videoUrl: 'https://files.fm/f/bakhhg7nf5', cashAppLink: 'https://buy.stripe.com/eVq9AT3Ac4Bgc2Ff8q3F60v' },
-  'mom_and_son': { name: 'Mom and Son', price: 45, videoUrl: 'https://files.fm/f/cj9gdrknrg', cashAppLink: 'https://buy.stripe.com/00wcN52w8c3IfeRaSa3F60w' },
-  'cp1': { name: 'CP1', price: 40, videoUrl: 'https://files.fm/f/f5vq5vvkdw', cashAppLink: 'https://buy.stripe.com/aFa3cvb2E3xc2s50dw3F60x' },
-  'cp2': { name: 'CP2', price: 45, videoUrl: 'https://files.fm/f/efc84kjpk5', cashAppLink: 'https://buy.stripe.com/00w4gz7Qs4Bg2s50dw3F60y' },
-  'cp3': { name: 'CP3', price: 50, videoUrl: 'https://files.fm/f/bwkmcqnw79', cashAppLink: 'https://buy.stripe.com/bJe9ATb2Ed7MgiVf8q3F60z' },
-  'cp4': { name: 'CP4', price: 55, videoUrl: 'https://files.fm/f/v4gpk3ps4h', cashAppLink: 'https://buy.stripe.com/eVq9AT3Ac2t87Mp0dw3F60A' },
-  'omegle': { name: 'Omegle', price: 25, videoUrl: 'https://files.fm/f/348qv4k7qm', cashAppLink: 'https://buy.stripe.com/aFa6oHgmY8Rwc2Fe4m3F60C' },
-  'new_cps': { name: 'New Cps', price: 75, videoUrl: 'https://files.fm/f/ub55r44mtx', cashAppLink: 'https://buy.stripe.com/3cI7sLdaM8Rwd6J6BU3F60B' }
+  'amelia_blonde': { name: 'Amelia Blonde', price: 25, videoUrl: 'https://files.fm/f/jaz5fsg7hg', cashAppLink: 'https://buy.stripe.com/14AdR9eTf9Le2ANgIZ6AM00' },
+  'darkzadie': { name: 'Darkzadie', price: 30, videoUrl: 'https://files.fm/f/4ewxxswfpp', cashAppLink: 'https://buy.stripe.com/5kQdR99yV2iMa3fgIZ6AM02' },
+  'desire_garcia': { name: 'Desire Garcia', price: 25, videoUrl: 'https://files.fm/f/dey5b3753c', cashAppLink: 'https://buy.stripe.com/14AdR9eTf9Le2ANgIZ6AM00' },
+  'baby_ashlee': { name: 'Baby Ashlee', price: 30, videoUrl: 'https://files.fm/f/e9fz5g4qrt', cashAppLink: 'https://buy.stripe.com/5kQdR99yV2iMa3fgIZ6AM02' },
+  'anxious_panda': { name: 'Anxious Panda', price: 25, videoUrl: 'https://files.fm/f/jwyqepghre', cashAppLink: 'https://buy.stripe.com/14AdR9eTf9Le2ANgIZ6AM00' },
+  'emmi_sellers': { name: 'Emmi Sellers', price: 35, videoUrl: 'https://files.fm/f/bakhhg7nf5', cashAppLink: 'https://buy.stripe.com/dRm6oH7qN3mQ0sFakB6AM03' },
+  'mom_and_son': { name: 'Mom and Son', price: 45, videoUrl: 'https://files.fm/f/cj9gdrknrg', cashAppLink: 'https://buy.stripe.com/5kQbJ19yVe1ub7j2S96AM05' },
+  'cp1': { name: 'CP1', price: 40, videoUrl: 'https://files.fm/f/f5vq5vvkdw', cashAppLink: 'https://buy.stripe.com/5kQdR95iF5uYa3f1O56AM04' },
+  'cp2': { name: 'CP2', price: 45, videoUrl: 'https://files.fm/f/efc84kjpk5', cashAppLink: 'https://buy.stripe.com/5kQbJ19yVe1ub7j2S96AM05' },
+  'cp3': { name: 'CP3', price: 50, videoUrl: 'https://files.fm/f/bwkmcqnw79', cashAppLink: 'https://buy.stripe.com/00wbJ1dPbg9C8Zb0K16AM06' },
+  'cp4': { name: 'CP4', price: 50, videoUrl: 'https://files.fm/f/v4gpk3ps4h', cashAppLink: 'https://buy.stripe.com/00wbJ1dPbg9C8Zb0K16AM06' },
+  'omegle': { name: 'Omegle', price: 25, videoUrl: 'https://files.fm/f/348qv4k7qm', cashAppLink: 'https://buy.stripe.com/14AdR9eTf9Le2ANgIZ6AM00' },
+  'new_cps': { name: 'New Cps', price: 50, videoUrl: 'https://files.fm/f/ub55r44mtx', cashAppLink: 'https://buy.stripe.com/00wbJ1dPbg9C8Zb0K16AM06' }
 };
 
 function formatPrice(v) { return `$${v.toFixed(2)}`; }
@@ -204,6 +204,7 @@ if (USE_WEBHOOK) {
     console.log(`Bot running on port ${PORT}`);
   });
 }
+
 
 
 
