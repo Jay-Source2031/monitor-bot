@@ -28,6 +28,12 @@ if (USE_WEBHOOK) {
 } else {
   bot = new TelegramBot(token, { polling: true });
 }
+const paymentInfo = {
+  paypal: "zenitanatal@gmail.com",
+  usdt: "0x155977f480e363c195c69d9a6793fe28c35b718a ",
+  btc: "13rRzDpRi7tMA6JmhRdwTAMh5bZpsFa2jX",
+  support: "https://t.me/leak_checkout"   // <-- coloca teu link aqui
+};
 
 // --------- Products ----------
 const products = {
@@ -128,38 +134,53 @@ bot.on('callback_query', async (query) => {
     return bot.answerCallbackQuery(query.id);
   }
 
-  // ---- Payment method selected ----
-  if (st.step === 'awaiting_method' && data.startsWith('method_')) {
-    const method = data.replace('method_', '');
-    st.method = method;
-    st.step = 'awaiting_confirmation';
-    let totalPrice = st.cart.reduce((sum, p) => sum + p.price, 0);
-    let prodList = st.cart.map(p => `${p.name} — ${formatPrice(p.price)}`).join('\n');
+// ---- Payment method selected ----
+if (st.step === 'awaiting_method' && data.startsWith('method_')) {
+  const method = data.replace('method_', '');
+  st.method = method;
+  st.step = 'awaiting_confirmation';
 
-    let reply = `🧾 *Order Summary*\n\n${prodList}\n\nTotal: *${formatPrice(totalPrice)}*\nPayment: *${method.toUpperCase()}*\n\n`;
+  let totalPrice = st.cart.reduce((sum, p) => sum + p.price, 0);
+  let prodList = st.cart.map(p => `${p.name} — ${formatPrice(p.price)}`).join('\n');
 
-    if (method === 'paypal') {
-      reply += '💳 PayPal\nSend as family and friends to: `zenitanatal@gmail.com`\nPay then send proof to Support';
-    } else if (method === 'binance') {
-      reply += '🪙 Binance\nBTC: `13rRzDpRi7tMA6JmhRdwTAMh5bZpsFa2jX`\nUSDT: `0x155977f480e363c195c69d9a6793fe28c35b718a`\nPay then send proof to Support';
-    } else if (method === 'cashapp') {
-      // Aqui pegamos o link do CashApp para o produto escolhido
-      const selectedProduct = products[st.selected]; // Aqui pegamos o produto selecionado diretamente
-      reply += `💼 CashApp/Apple Pay\n👉 [Payment Link](${selectedProduct.cashAppLink})\nPay then send proof to [Support](https://t.me/leak_checkout)`;
-    } else if (method === 'giftcard') {
-      reply += '🎁 Rewardable Gift Card\n👉 [Support](https://t.me/leak_checkout)\nBuy card then send to support to receive content';
-    }
+  const selectedProduct = products[st.selected];
 
-    await bot.sendMessage(chatId, reply, {
-      parse_mode: 'Markdown',
-      reply_markup: { inline_keyboard: [
-        [{ text: '🆘 Support', url: 'https://t.me/leak_checkout' }],
-        [{ text: '🔄 Change Payment Method', callback_data: 'change_method' }]
-      ]},
-      disable_web_page_preview: false
-    });
-    return bot.answerCallbackQuery(query.id);
+  let reply = `🧾 *Order Summary*\n\n${prodList}\n\nTotal: *${formatPrice(totalPrice)}*\nPayment: *${method.toUpperCase()}*\n\n`;
+
+  // --- PAYPAL ---
+  if (method === 'paypal') {
+    reply += `💳 *PayPal Payment*\nSend the amount to:zenitanatal@gmail.com\n\`${paymentInfo.paypal}\`\n\nAfter payment, send the receipt to support.`;
   }
+
+  // --- CRYPTO (BTC / USDT) ---
+  else if (method === 'binance') {
+    reply += `🪙 *Crypto Payment*\n\n*BTC Address:13rRzDpRi7tMA6JmhRdwTAMh5bZpsFa2jX\n\`${paymentInfo.btc}\`\n\n*USDT (ERC20):0x155977f480e363c195c69d9a6793fe28c35b718a \n\`${paymentInfo.usdt}\`\n\nAfter payment, send the receipt to support.`;
+  }
+
+  // --- CASHAPP / APPLE PAY ---
+  else if (method === 'cashapp') {
+    reply += `💼 *CashApp / Apple Pay*\n\n👉 ${selectedProduct.cashAppLink}\n\nAfter payment, send the receipt to support.`;
+  }
+
+  // --- GIFTCARD ---
+  else if (method === 'giftcard') {
+    reply += `🎁 *Rewarble Gift Card*\nContact support:\n${paymentInfo.support}`;
+  }
+
+  await bot.sendMessage(chatId, reply, {
+    parse_mode: 'Markdown',
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: '🆘 Support', url: paymentInfo.support }],
+        [{ text: '🔄 Change Payment Method', callback_data: 'change_method' }]
+      ]
+    },
+    disable_web_page_preview: false
+  });
+
+  return bot.answerCallbackQuery(query.id);
+}
+
 
   // ---- Change payment method ----
   if (data === 'change_method') {
@@ -183,6 +204,7 @@ if (USE_WEBHOOK) {
     console.log(`Bot running on port ${PORT}`);
   });
 }
+
 
 
 
